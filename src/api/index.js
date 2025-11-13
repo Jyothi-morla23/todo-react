@@ -24,7 +24,7 @@ export const addTodo = async (title) => {
 
 export const updateTodo = async (id, completed) => {
   try {
-    const response = await axios.put(`${API_URL}${id}`, { completed });
+    const response = await axios.put(`${API_URL}/${id}`, { completed });
     return response.data;
   } catch (error) {
     console.error('Error updating todo:', error);
@@ -34,7 +34,7 @@ export const updateTodo = async (id, completed) => {
 
 export const deleteTodo = async (id) => {
   try {
-    await axios.delete(`${API_URL}${id}`);
+    await axios.delete(`${API_URL}/${id}`);
     return true;
   } catch (error) {
     console.error('Error deleting todo:', error);
